@@ -50,7 +50,9 @@ class ContactListViewController: UIViewController, BindableType {
       [weak self] dataSource, tableView, indexPath, item in
       let cell = tableView.dequeueReusableCell(withIdentifier: "ContactViewCell", for: indexPath) as! ContactViewCell
       if let strongSelf = self {
-        cell.configure(with: item, action: strongSelf.viewModel.onGetContactDetail(contact: item))
+        // before:
+//        cell.configure(with: item, action: strongSelf.viewModel.onGetContactDetail(contact: item))
+        cell.configure(with: item, action: strongSelf.viewModel.onGetContactDetail(contact: item, navController: strongSelf.navigationController!))
       }
       return cell
     }

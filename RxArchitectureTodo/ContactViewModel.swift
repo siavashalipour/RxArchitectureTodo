@@ -34,13 +34,23 @@ struct ContactViewModel {
       return self.contactService.update(contact: task, to: task).map { _ in }
     }
   }
-  
-  func onGetContactDetail(contact: ContactItem) -> CocoaAction {
+  // before:
+//    
+//    func onGetContactDetail(contact: ContactItem) -> CocoaAction {
+//        return CocoaAction {
+//            return self.contactService.getContact(id: contact.id)
+//                .flatMap({ task -> Observable<Void> in
+//                    let detailViewModel = ContactDetailViewModel(task: task, coordinator: self.sceneCoordinator)
+//                    return self.sceneCoordinator.transition(to: Scene.contactDetail(detailViewModel), type: .push)
+//                })
+//        }
+//    }
+    func onGetContactDetail(contact: ContactItem, navController: UINavigationController) -> CocoaAction {
     return CocoaAction {
       return self.contactService.getContact(id: contact.id)
         .flatMap({ task -> Observable<Void> in
           let detailViewModel = ContactDetailViewModel(task: task, coordinator: self.sceneCoordinator)
-          return self.sceneCoordinator.transition(to: Scene.contactDetail(detailViewModel), type: .modal)
+          return self.sceneCoordinator.transition(to: Scene.contactDetail(detailViewModel), type: .push(navController))
         })
     }
   }

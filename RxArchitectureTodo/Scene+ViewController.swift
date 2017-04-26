@@ -32,10 +32,16 @@ extension Scene {
       vc.bindViewModel(to: viewModel)
       return nc
     case .contactDetail(let viewModel):
-      let nc = storyboard.instantiateViewController(withIdentifier: "contactDetailNav") as! UINavigationController
-      var vc = nc.viewControllers.first as! ContactDetailViewController
-      vc.bindViewModel(to: viewModel)
-      return nc
+        var vc = storyboard.instantiateViewController(withIdentifier: "ContactDetailViewController") as! ContactDetailViewController
+        vc.bindViewModel(to: viewModel)
+       
+        // Before: We'll you need to change the storyboard as well, caue right now `ContactDetailViewController` is not a rootViewController of UINavigationController
+        
+//        let nc = storyboard.instantiateViewController(withIdentifier: "ContactDetailNav") as! UINavigationController
+//        var vc = nc.viewControllers.first as! ContactDetailViewController
+//        vc.bindViewModel(to: viewModel)
+//        return nc
+      return vc
     }
   }
 }

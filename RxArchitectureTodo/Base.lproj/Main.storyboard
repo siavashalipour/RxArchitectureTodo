@@ -77,6 +77,7 @@
                     <navigationItem key="navigationItem" id="gpW-b6-dFN"/>
                     <connections>
                         <outlet property="tableView" destination="Ub7-J1-P6O" id="gEl-Ua-lx9"/>
+                        <segue destination="qyD-8o-NhD" kind="show" identifier="show" id="Max-hP-E4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,7 +110,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pLz-9L-Suv">
-                        <barButtonItem key="leftBarButtonItem" title="Cacnel" id="gcl-6R-WkX">
+                        <barButtonItem key="rightBarButtonItem" title="Cacnel" id="gcl-6R-WkX">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         </barButtonItem>
                     </navigationItem>
@@ -143,7 +144,6 @@
         <!--Navigation Controller-->
         <scene sceneID="a6X-Om-oAN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Row-8t-2mI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="contactDetailNav" automaticallyAdjustsScrollViewInsets="NO" id="aYD-K5-bs1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MUm-zm-7Rz">
@@ -151,10 +151,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qyD-8o-NhD" kind="relationship" relationship="rootViewController" id="D9W-wZ-Zrt"/>
-                    </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Row-8t-2mI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-68" y="1432.5337331334333"/>
         </scene>
